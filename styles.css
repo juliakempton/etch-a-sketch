@@ -1,0 +1,18 @@
+#grid-squares-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 300px;
+    width: 300px;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+    position: absolute;
+    border: 2px solid black;
+
+}
+
+.grid-box {
+    width: 25%;
+    height: 25%;
+    
+}
