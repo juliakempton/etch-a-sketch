@@ -1,8 +1,8 @@
 #grid-squares-container {
     display: flex;
     flex-wrap: wrap;
-    height: 300px;
-    width: 300px;
+    height: 500px;
+    width: 500px;
     right: 50%;
     bottom: 50%;
     transform: translate(50%,50%);
@@ -12,7 +12,7 @@
 }
 
 .grid-box {
-    width: 25%;
-    height: 25%;
+    width: 6.25%;
+    height: 6.25%;
     
 }
