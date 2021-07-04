@@ -6,9 +6,22 @@
     </head>
     <body>
         <h1>Etch-a-Sketch</h1>
-        <div id="grid-squares-container">
+        <div id="grid-squares-container"></div>
+        <div id="top-buttons-div" >
+            <button id="black" class="color-buttons">Black</button>
+            <button id="erase" class="color-buttons">Erase</button>
+            <button id="random" class="color-buttons">Random</button>
+            <button id="pick-color" class="color-buttons">
+                <label for="color-picker">RGB</label>
+                <input type="color" id="color-picker" name="color-picker"
+                       placeholder="#000000">
+            </button>
         </div>
         <button id="clear">Clear</button>
+        <div id="size-picker">
+            <label for="grid-size-picker" id="size-picker-label">Squares per side: 16<br></label>
+            <input type="range" min="1" max="100" value="16" class="slider" id="grid-size-picker">
+        </div>
     </body>
 </html>
 <script src="script.js"></script>

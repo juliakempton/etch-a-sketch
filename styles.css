@@ -1,8 +1,15 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+    color: darkblue;
+    background-color: lightgray;
+}
 h1 {
     right: 50%;
     bottom: 90%;
     transform: translate(50%,50%);
     position: absolute;
+    font-size: 50px;
+    color: darkblue;
 }
 #grid-squares-container {
     display: flex;
@@ -10,22 +17,55 @@ h1 {
     height: 500px;
     width: 500px;
     right: 50%;
-    bottom: 50%;
+    bottom: 45%;
     transform: translate(50%,50%);
     position: absolute;
-    border: 2px solid black;
-
+    border: 5px solid rgb(112, 206, 238);
+    border-radius: 1%;
+    background-color: white;
 }
-
-.grid-box {
-    width: 6.25%;
-    height: 6.25%;
-
-}
-
 #clear {
-    right: 50%;
-    bottom: 10%;
+    right: 57%;
+    bottom: 7%;
     transform: translate(50%,50%);
     position: absolute;
+}
+#top-buttons-div {
+    right: 49.5%;
+    bottom: 82%;
+    transform: translate(50%,50%);
+    position: absolute; 
+}
+button {
+    margin-right: 10px;
+    height: 40px;
+    width: 80px;
+    vertical-align: middle;
+    background-color: rgb(167, 218, 238);
+    border: 3px solid gray;
+    border-radius: 20px;
+    color: darkblue;
+    font-size: 16px;
+}
+#pick-color {
+    width: 120px;
+}
+button:hover {
+    background-color: rgb(68, 185, 240);
+}
+#size-picker {
+    right: 45%;
+    bottom: 7%;
+    transform: translate(50%,50%);
+    position: absolute; 
+}
+#grid-size-picker {
+    width: 160px;
+}
+.slider {
+    height: 25px; 
+}
+#black {
+    border: 3px solid #53BDE3;
+    box-shadow: 0 0 10px #53BDE3;
 }
