@@ -84,14 +84,20 @@ randomBtn.addEventListener("click", () => {
 })
 
 /* gets a user-selected RGB color from a color picker and makes each box in the grid that color when moused over */
+function colorPickerAction(){
+  currentColor = colorPicker.value;
+  const gridBoxes = document.querySelectorAll(".grid-box");
+  gridBoxes.forEach((box) => { 
+      box.addEventListener("mouseover", (event) => {
+          event.target.style.backgroundColor = currentColor;
+      })
+  }) 
+}
+colorPickerBtn.addEventListener("click", () => {
+    colorPickerAction()
+});
 colorPickerBtn.addEventListener("input", () => {
-    currentColor = colorPicker.value;
-    const gridBoxes = document.querySelectorAll(".grid-box");
-    gridBoxes.forEach((box) => { 
-        box.addEventListener("mouseover", (event) => {
-            event.target.style.backgroundColor = currentColor;
-        })
-    }) 
+  colorPickerAction()
 });
 
 /* resets board when user clicks clear button */
@@ -111,8 +117,8 @@ colorBtns.forEach((btn) => {
             btn.style.border = '3px solid gray';
             btn.style.boxShadow = "none";
         })
-        btn.style.border = '3px solid #53BDE3';
-        btn.style.boxShadow = "0 0 10px #53BDE3"
+        btn.style.border = '3px solid #02296D';
+        btn.style.boxShadow = "0 0 5px #02296D"
 
     })
 })

@@ -1,15 +1,20 @@
 body {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
-    color: darkblue;
-    background-color: lightgray;
+    font-family: OCR A Std, monospace;
+    color: rgb(2, 2, 82);
+    background-color: rgb(233, 232, 232);
+    
 }
 h1 {
     right: 50%;
-    bottom: 90%;
+    bottom: 88%;
     transform: translate(50%,50%);
     position: absolute;
-    font-size: 50px;
-    color: darkblue;
+    font-size: 60px;
+    color: rgb(3, 3, 26);
+    text-shadow: 2px 2px 0px #382beb, 
+                  4px 4px 0px #65acee;
+	  font-family: OCR A Std, monospace;
+    font-weight: 500;
 }
 #grid-squares-container {
     display: flex;
@@ -20,7 +25,7 @@ h1 {
     bottom: 45%;
     transform: translate(50%,50%);
     position: absolute;
-    border: 5px solid rgb(112, 206, 238);
+    border: 3px solid rgb(7, 7, 7);
     border-radius: 1%;
     background-color: white;
 }
@@ -41,17 +46,19 @@ button {
     height: 40px;
     width: 80px;
     vertical-align: middle;
-    background-color: rgb(167, 218, 238);
+    background-color: rgb(175, 214, 245);
     border: 3px solid gray;
     border-radius: 20px;
-    color: darkblue;
+    color: rgb(6, 6, 85);
+    font-family: Andale Mono, monospace;
+    font-weight: 900;
     font-size: 16px;
 }
 #pick-color {
     width: 120px;
 }
 button:hover {
-    background-color: rgb(68, 185, 240);
+    background-color: rgb(126, 189, 241);
 }
 #size-picker {
     right: 45%;
@@ -61,11 +68,12 @@ button:hover {
 }
 #grid-size-picker {
     width: 160px;
+
 }
 .slider {
     height: 25px; 
 }
 #black {
-    border: 3px solid #53BDE3;
-    box-shadow: 0 0 10px #53BDE3;
+    border: 3px solid #02296D;
+    box-shadow: 0 0 10px #02296D;
 }
