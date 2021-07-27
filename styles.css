@@ -1,7 +1,7 @@
 body {
     font-family: OCR A Std, monospace;
     color: rgb(2, 2, 82);
-    background-color: rgb(233, 232, 232);
+    background-color: rgb(221, 222, 223);
     
 }
 h1 {
@@ -36,7 +36,7 @@ h1 {
     position: absolute;
 }
 #top-buttons-div {
-    right: 49.5%;
+    right: 50%;
     bottom: 82%;
     transform: translate(50%,50%);
     position: absolute; 
@@ -44,7 +44,7 @@ h1 {
 button {
     margin-right: 10px;
     height: 40px;
-    width: 80px;
+    width: 88px;
     vertical-align: middle;
     background-color: rgb(175, 214, 245);
     border: 3px solid gray;

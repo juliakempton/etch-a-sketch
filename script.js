@@ -2,6 +2,7 @@
 const gridContainer = document.querySelector("#grid-squares-container");
 const clearBtn = document.querySelector("#clear");
 const randomBtn = document.querySelector("#random");
+const rainbowBtn = document.querySelector("#rainbow")
 const blackBtn = document.querySelector("#black");
 const eraseBtn = document.querySelector("#erase");
 const colorBtns = document.querySelectorAll(".color-buttons");
@@ -25,7 +26,7 @@ function createGrid(numSquares) {
     /* creates event listener for each box in the grid to change color */
     const gridBoxes = document.querySelectorAll(".grid-box");
     gridBoxes.forEach((box) => { 
-        box.addEventListener("mouseenter", (e) => {
+        box.addEventListener("mouseenter", () => {
             box.style.backgroundColor = currentColor;
         })
     }) 
@@ -38,6 +39,13 @@ function resetBoard() {
         gridContainer.removeChild(gridContainer.firstChild);
     }
     createGrid(currentGridSize);
+    currentColor = "#000000";
+    colorBtns.forEach((btn) => {
+      btn.style.border = '3px solid gray';
+      btn.style.boxShadow = "none";
+    })
+    blackBtn.style.border = '3px solid #02296D';
+    blackBtn.style.boxShadow = "0 0 5px #02296D";
 }
 
 /* returns a random RGB color */
@@ -50,54 +58,52 @@ function getRandomColor() {
     return rgba;
 }
 
+/* changes the color of each grid box to the color that is passed into the function*/
+function changeBoxColor(color) {
+  const gridBoxes = document.querySelectorAll(".grid-box");
+  gridBoxes.forEach((box) => { 
+      box.addEventListener("mouseover", (event) => {
+        currentColor = color;
+        event.target.style.backgroundColor = currentColor;
+      })
+  }) 
+}
+
 /* makes each box in the grid black when moused over */
 blackBtn.addEventListener("click", () => {
-    currentColor = "#000000";
-    const gridBoxes = document.querySelectorAll(".grid-box");
-    gridBoxes.forEach((box) => { 
-        box.addEventListener("mouseover", (event) => {
-            event.target.style.backgroundColor = currentColor;
-        })
-    }) 
+    changeBoxColor("#000000");
 })
 
 /* makes each box in the grid white when moused over */
 eraseBtn.addEventListener("click", () => {
-    currentColor = "#FFFFFF ";
-    const gridBoxes = document.querySelectorAll(".grid-box");
-    gridBoxes.forEach((box) => { 
-        box.addEventListener("mouseover", (event) => {
-            event.target.style.backgroundColor = currentColor;
-        })
-    }) 
+    changeBoxColor("#FFFFFF"); 
 })
 
 /* gets a random color and makes each box in the grid that color when moused over */
 randomBtn.addEventListener("click", () => {
-    currentColor = getRandomColor();
-    const gridBoxes = document.querySelectorAll(".grid-box");
-    gridBoxes.forEach((box) => { 
-        box.addEventListener("mouseover", (event) => {
-            event.target.style.backgroundColor = currentColor;
-        })
-    }) 
+    changeBoxColor(getRandomColor());
 })
 
-/* gets a user-selected RGB color from a color picker and makes each box in the grid that color when moused over */
-function colorPickerAction(){
-  currentColor = colorPicker.value;
+/* makes each box in the grid a different random color when moused over */
+rainbowBtn.addEventListener("click", () => {
   const gridBoxes = document.querySelectorAll(".grid-box");
   gridBoxes.forEach((box) => { 
       box.addEventListener("mouseover", (event) => {
+          currentColor = getRandomColor();
           event.target.style.backgroundColor = currentColor;
       })
   }) 
-}
+})
+
+/* gets a user-selected RGB color from a color picker and makes each box in the grid that color when moused over */
+
 colorPickerBtn.addEventListener("click", () => {
-    colorPickerAction()
+  currentColor = colorPicker.value;
+  changeBoxColor(colorPicker.value);
 });
 colorPickerBtn.addEventListener("input", () => {
-  colorPickerAction()
+  currentColor = colorPicker.value;
+  changeBoxColor(colorPicker.value);
 });
 
 /* resets board when user clicks clear button */
@@ -122,4 +128,3 @@ colorBtns.forEach((btn) => {
 
     })
 })
-
